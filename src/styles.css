@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+body {
+    background-color:  #7b8187;
+    overflow-x: hidden;
+}
+
+.movie-list{
+cursor: pointer;
+}
+.movie-list:hover{
+background: #e8eaed;
+}
+.star{
+    color:yellow;
+}
+.active-li{
+    background: #e8eaed;
+}
