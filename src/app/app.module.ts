@@ -8,12 +8,14 @@ import { MoviesListComponent } from './movies/movies-list/movies-list.component'
 import { ApiService } from './services/api-service.service';
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
 import { AppRoutingModule } from './app-routing.module';
+import { GridViewComponent } from './grid-view/grid-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoviesListComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    GridViewComponent
   ],
   imports: [
     BrowserModule,

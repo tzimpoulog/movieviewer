@@ -35,7 +35,7 @@ export class MovieDetailsComponent implements OnInit {
       this.revenue = this.movieDetails.revenue;
       this.vote = this.movieDetails.vote_average;
 
-      this.imgBaseUrl = this.apiService.getImageBaseUrl()
+      this.imgBaseUrl = this.apiService.getImageBaseUrl();
       this.posterUrl = this.imgBaseUrl + 'w154' + this.movieDetails.poster_path;
     });
   }

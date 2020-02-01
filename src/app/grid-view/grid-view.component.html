@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let movie of moviesList; let i = index;" class="col-sm-4 mt-3">
+            <div class="card">
+                <img class="card-img-top" src="{{ imgBaseUrl + movie.poster_path }}" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">{{ movie.title }}</h4>
+                    <p class="card-text">{{ (movie.overview .length>100)? (movie.overview  | slice:0:100)+'..':(movie.overview ) }}</p>
+                    <a href="#" class="btn btn-primary">See Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
