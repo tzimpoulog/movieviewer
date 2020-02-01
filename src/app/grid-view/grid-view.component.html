@@ -10,13 +10,16 @@
     <div class="row mb-3">
         <div id="collapseExample" [ngbCollapse]="isCollapsed">
             <div class="col-sm-12">
-                <button (click)="getMoviesByGenre(28);" class="btn btn-primary mr-2 mb-2">Action</button>
-                <button (click)="getMoviesByGenre(12);" class="btn btn-primary mr-2 mb-2">Adventure</button>
-                <button (click)="getMoviesByGenre(16);" class="btn btn-primary mr-2 mb-2">Animation</button>
-                <button (click)="getMoviesByGenre(35);" class="btn btn-primary mr-2 mb-2">Comedy</button>
-                <button (click)="getMoviesByGenre(35);" class="btn btn-primary mr-2 mb-2">Comedy</button>
-                <button (click)="getMoviesByGenre(35);" class="btn btn-primary mr-2 mb-2">Comedy</button>
-                <button (click)="getMoviesByGenre(35);" class="btn btn-primary mr-2 mb-2">Comedy</button>
+                <button (click)="getMoviesByGenre('Action');" class="btn btn-primary mr-2 mb-2">Action</button>
+                <button (click)="getMoviesByGenre('Adventure');" class="btn btn-primary mr-2 mb-2">Adventure</button>
+                <button (click)="getMoviesByGenre('Animation');" class="btn btn-primary mr-2 mb-2">Animation</button>
+                <button (click)="getMoviesByGenre('Comedy');" class="btn btn-primary mr-2 mb-2">Comedy</button>
+                <button (click)="getMoviesByGenre('Crime');" class="btn btn-primary mr-2 mb-2">Crime</button>
+                <button (click)="getMoviesByGenre('Horror');" class="btn btn-primary mr-2 mb-2">Horror</button>
+                <button (click)="getMoviesByGenre('Drama');" class="btn btn-primary mr-2 mb-2">Drama</button>
+                <button (click)="getMoviesByGenre('Mystery');" class="btn btn-primary mr-2 mb-2">Mystery</button>
+                <button (click)="getMoviesByGenre('Romance');" class="btn btn-primary mr-2 mb-2">Romance</button>
+                <button (click)="getMoviesByGenre('ScienceFiction');" class="btn btn-primary mr-2 mb-2">Science Fiction</button>
             </div>
         </div>
     </div>
@@ -26,7 +29,7 @@
             <div class="card">
                 <img class="card-img-top card-img" src="{{ imgBaseUrl + movie.poster_path }}" alt="Card image"
                     style="width:100%">
-                <div class="card-body">
+                <div class="card-body bg-dark text-light">
                     <h4 class="card-title">{{ movie.title }}</h4>
                     <p class="card-text">
                         {{ (movie.overview .length>100)? (movie.overview  | slice:0:100)+'..':(movie.overview ) }}</p>
