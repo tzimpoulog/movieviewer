@@ -4,7 +4,7 @@
                         <ul class="list-group">
                                 <li class="list-group-item list-group-item-secondary movie-list"
                                         [class.active-li]="selectedIndex === i"
-                                        (click)="details.loadMovieDetails(movie.id);details.loadSimilarMovies(movie.id);listHasData();setIndex(i)">
+                                        (click)="details.loadMovieDetails(movie.id);listHasData();setIndex(i)">
                                         {{ movie.title }}
                                         <i [ngClass]="selectedIndex === i ? 'fas fa-angle-right' : 'fas fa-angle-down'"
                                                 class="float-right"></i>

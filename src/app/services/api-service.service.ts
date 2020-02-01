@@ -28,5 +28,12 @@ export class ApiService {
     return this.http.get(this.apiUrl + '3/movie/' + id +'/similar' + this.apiKey);
   }
 
+  getGenreList(){
+    return this.http.get(this.apiUrl + '3/genre/movie/list' + this.apiKey);
+  }
+
+  getListByGenre(genreId){
+    return this.http.get(this.apiUrl + '3/discover/movie'+ this.apiKey + '&with_genres=' + genreId );
+  }
    
 }

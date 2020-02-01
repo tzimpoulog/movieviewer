@@ -1,14 +1,38 @@
 <div class="container">
+    <div class="row mt-3">
+        <p>
+            <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+                [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+                Categories <i class="fas fa-filter"></i>
+            </button>
+        </p>
+    </div>
+    <div class="row mb-3">
+        <div id="collapseExample" [ngbCollapse]="isCollapsed">
+            <div class="col-sm-12">
+                <button (click)="getMoviesByGenre(28);" class="btn btn-primary mr-2 mb-2">Action</button>
+                <button (click)="getMoviesByGenre(12);" class="btn btn-primary mr-2 mb-2">Adventure</button>
+                <button (click)="getMoviesByGenre(16);" class="btn btn-primary mr-2 mb-2">Animation</button>
+                <button (click)="getMoviesByGenre(35);" class="btn btn-primary mr-2 mb-2">Comedy</button>
+                <button (click)="getMoviesByGenre(35);" class="btn btn-primary mr-2 mb-2">Comedy</button>
+                <button (click)="getMoviesByGenre(35);" class="btn btn-primary mr-2 mb-2">Comedy</button>
+                <button (click)="getMoviesByGenre(35);" class="btn btn-primary mr-2 mb-2">Comedy</button>
+            </div>
+        </div>
+    </div>
+ 
     <div class="row">
         <div *ngFor="let movie of moviesList; let i = index;" class="col-sm-4 mt-3">
             <div class="card">
-                <img class="card-img-top" src="{{ imgBaseUrl + movie.poster_path }}" alt="Card image"
+                <img class="card-img-top card-img" src="{{ imgBaseUrl + movie.poster_path }}" alt="Card image"
                     style="width:100%">
                 <div class="card-body">
                     <h4 class="card-title">{{ movie.title }}</h4>
                     <p class="card-text">
                         {{ (movie.overview .length>100)? (movie.overview  | slice:0:100)+'..':(movie.overview ) }}</p>
-                    <p><ngb-rating class="star" [(rate)]="movie.vote_average" [readonly]=true></ngb-rating></p>
+                    <p>
+                        <ngb-rating class="star" [(rate)]="movie.vote_average" [readonly]=true></ngb-rating>
+                    </p>
                     <p>{{ movie.vote_average }} / 10</p>
                     <a routerLink="{{ movie.id }}" class="btn btn-primary">See Details</a>
                 </div>

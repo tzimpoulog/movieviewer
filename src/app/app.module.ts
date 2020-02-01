@@ -11,7 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { GridViewComponent } from './grid-view/grid-view.component';
 import { Notfound404Component } from './notfound404/notfound404.component';
 import { FooterComponent } from './footer/footer.component';
-import { MoviePageComponent } from './grid-view/movie-page/movie-page.component';
+import { MoviePageComponent } from './movie-page/movie-page.component';
 
 @NgModule({
   declarations: [

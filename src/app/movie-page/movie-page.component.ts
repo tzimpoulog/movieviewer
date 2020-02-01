@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ApiService } from '../../services/api-service.service';
+import { ApiService } from '../services/api-service.service';
 
 @Component({
   selector: 'app-movie-page',

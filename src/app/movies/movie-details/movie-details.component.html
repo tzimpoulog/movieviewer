@@ -1,23 +1,26 @@
 <div class="container">
-    <div class="row">
-        <div class="col-sm-12 text-center text-white">
-            <h3>{{ movieTitle }}</h3>
+    <div *ngIf="!dataStatus">
+        <div class="row">
+            <div class="col-sm-12 text-center text-white">
+                <h3>{{ movieTitle }}</h3>
+            </div>
+        </div>
+        <div class="row mt-3 text-white">
+            <div class="col-sm-4">
+                <img src="{{ posterUrl }}" alt="">
+            </div>
+            <div class="col-sm-8">
+                <p> {{ overview }}</p>
+                <p>Release Date: {{ releaseDate | date:'fullDate' }}</p>
+                <p>Budget: {{ budget | currency:'USD':'symbol' }}</p>
+                <p>Revenue: {{ revenue | currency:'USD':'symbol' }}</p>
+                <ngb-rating class="star" [(rate)]="vote" [readonly]=true></ngb-rating>
+                <p>Rate: <b>{{vote}}</b></p>
+            </div>
         </div>
     </div>
-    <div class="row mt-3 text-white">
-        <div class="col-sm-4">
-            <img src="{{ posterUrl }}" alt="">
-        </div>
-        <div class="col-sm-8">
-            <p> {{ overview }}</p>
-            <p>Release Date: {{ releaseDate | date:'fullDate' }}</p>
-            <p>Budget: {{ budget | currency:'USD':'symbol' }}</p>
-            <p>Revenue: {{ revenue | currency:'USD':'symbol' }}</p>
-            <ngb-rating class="star" [(rate)]="vote" [readonly]=true></ngb-rating>
-            <p>Rate: <b>{{vote}}</b></p>
-        </div>
-    </div>
-    <div class="row">
-        
+
+    <div *ngIf="dataStatus" class="row">
+        <p style="color:red;">No Data</p>
     </div>
 </div>

@@ -29,10 +29,6 @@ background: #e8eaed;
     border: 0;
     transition: 0.4s;
 }
-.card > wrapper {
-      padding: 0;
-      box-shadow: 0 10px 60px 0 rgba(0,0,0,0.2);
-    }
 .card:hover {
       transform: scale(1.1);
       box-shadow: 0 10px 40px 0 rgba(0,0,0,0.4);
@@ -43,6 +39,11 @@ background: #e8eaed;
       color: #FEA200;
       font-weight: 500;
     }
+.card-img{
+    width: 50%;
+    height: 247px;
+    margin: auto;
+}
     
 /* not-found-page */
 #notfound {

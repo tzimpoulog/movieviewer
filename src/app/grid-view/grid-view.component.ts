@@ -13,11 +13,16 @@ export class GridViewComponent implements OnInit {
   imgBaseUrl: string = 'https://image.tmdb.org/t/p/' + 'w154';
   posterUrl: string;
   posterPath: string;
+  movieCategories;
+  movieGenres;
+  public isCollapsed = true;
 
   constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit() {
     this.loadMovieList('popular');
+    this.getCategories();
+    //this.getMoviesByGenre(28);
   }
 
   loadMovieList(category: string){
@@ -34,5 +39,17 @@ export class GridViewComponent implements OnInit {
     let url: string = "/movie/" + movie_id
          this.router.navigateByUrl(url);
       }
+  
+  getCategories(){
+    this.apiService.getGenreList().subscribe((response) => {
+      this.movieCategories = response['results'];      
+    });
+  }
+
+  getMoviesByGenre(genreId){
+    this.apiService.getListByGenre(genreId).subscribe((response) => {
+      this.moviesList = response['results'];      
+    });
+  }
 
 }
