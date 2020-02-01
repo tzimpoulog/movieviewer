@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api-service.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class GridViewComponent implements OnInit {
   posterUrl: string;
   posterPath: string;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit() {
     this.loadMovieList('popular');
@@ -28,5 +29,10 @@ export class GridViewComponent implements OnInit {
      
     });    
   }
+
+  viewMoviepage(movie_id : any){
+    let url: string = "/movie/" + movie_id
+         this.router.navigateByUrl(url);
+      }
 
 }

@@ -10,7 +10,7 @@
                         {{ (movie.overview .length>100)? (movie.overview  | slice:0:100)+'..':(movie.overview ) }}</p>
                     <p><ngb-rating class="star" [(rate)]="movie.vote_average" [readonly]=true></ngb-rating></p>
                     <p>{{ movie.vote_average }} / 10</p>
-                    <a href="#" class="btn btn-primary">See Details</a>
+                    <a routerLink="{{ movie.id }}" class="btn btn-primary">See Details</a>
                 </div>
             </div>
         </div>
