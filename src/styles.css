@@ -7,6 +7,8 @@ body {
     overflow-x: hidden;
 }
 
+a { color: inherit; } 
+
 .movie-list{
 cursor: pointer;
 }
@@ -14,7 +16,7 @@ cursor: pointer;
 background: #e8eaed;
 }
 .star{
-    color:yellow;
+    color:#ffab00;
 }
 .active-li{
     background: #e8eaed;
