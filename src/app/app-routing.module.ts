@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { MoviesListComponent } from './movies/movies-list/movies-list.component';
 import { GridViewComponent } from './grid-view/grid-view.component';
+import { Notfound404Component } from './notfound404/notfound404.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'grid-view',
     component: GridViewComponent
+  },
+  { 
+    path: '**', 
+    component: Notfound404Component 
   }
 ];
 
