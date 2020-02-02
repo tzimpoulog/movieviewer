@@ -8,6 +8,5 @@ export enum Categories {
     Drama = 18,
     Mystery = 9648,
     Romance = 10749,
-    ScienceFiction = 878
-    
+    ScienceFiction = 878  
 }

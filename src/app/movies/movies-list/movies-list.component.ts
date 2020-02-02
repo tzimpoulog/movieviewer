@@ -10,20 +10,20 @@ export class MoviesListComponent implements OnInit {
   moviesList = [];
   movieListHasData: boolean;
   selectedIndex: number = null;
+  movieLength: boolean;
  
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
     this.loadMovieList('popular');
-    this.listHasData();
   }
 
   loadMovieList(category: string){
     this.apiService.getList(category).subscribe( (response) => {
       this.moviesList = response['results'];
-      this.moviesList.forEach(e => {
-        console.log("H lista mou: " + e.id);
-      });
+      this.listHasData();
+      if(this.moviesList.length == 0)
+        this.movieListHasData = true;
     });    
   }
 

@@ -22,6 +22,17 @@ background: #e8eaed;
     background: #e8eaed;
 }
 
+.btn-back{
+  color: #fff;
+  background-color: #343a40;
+  border:#343a40;
+  border-radius: 20px;
+}
+.btn-back:hover{
+  background-color: #4d5054;
+  color: #fff;
+}
+
 /* grid-view */
 .card{
     z-index: 1;

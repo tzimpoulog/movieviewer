@@ -23,7 +23,6 @@ export class GridViewComponent implements OnInit {
   ngOnInit() {
     this.loadMovieList('popular');
     this.getCategories();
-    //this.getMoviesByGenre(28);
   }
 
   loadMovieList(category: string) {

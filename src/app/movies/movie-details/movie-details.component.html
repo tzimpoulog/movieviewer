@@ -1,6 +1,6 @@
 <div class="container">
     <div *ngIf="!dataStatus">
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-sm-12 text-center text-white">
                 <h3>{{ movieTitle }}</h3>
             </div>
@@ -21,6 +21,10 @@
     </div>
 
     <div *ngIf="dataStatus" class="row">
-        <p style="color:red;">No Data</p>
+        <div class="row">
+            <div class="col-12 text-center">
+                <p style="font-size: 30px; color:#fff">No results!Try again later!</p>
+            </div>
+        </div>
     </div>
 </div>

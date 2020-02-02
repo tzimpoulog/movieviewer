@@ -22,7 +22,7 @@ export class MovieDetailsComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    
+    this.loadMovieDetails(419704);
   }
 
   loadMovieDetails(id: number){
