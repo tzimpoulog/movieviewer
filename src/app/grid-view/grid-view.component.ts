@@ -16,7 +16,9 @@ export class GridViewComponent implements OnInit {
   posterPath: string;
   movieCategories;
   movieGenres;
-  public isCollapsed = true;
+  erroMessage:string = '';
+  hasError: boolean = false;
+  isCollapsed = true;
 
   constructor(private apiService: ApiService, private router: Router) { }
 
@@ -30,8 +32,11 @@ export class GridViewComponent implements OnInit {
       this.moviesList = response['results'];
       this.moviesList.forEach(element => {
         this.posterPath = element.poster_path
+      },error=>{
+        this.erroMessage = 'An error occured!Please try again later!';
+        this.hasError = true;
+        console.log(error);
       });
-
     });
   }
 
@@ -50,6 +55,10 @@ export class GridViewComponent implements OnInit {
     let genreId = this.categoryToGenreId(category);
     this.apiService.getListByGenre(genreId).subscribe((response) => {
       this.moviesList = response['results'];
+    },error=>{
+      this.erroMessage = 'An error occured!Please try again later!';
+      this.hasError = true;
+      console.log(error);
     });
   }
 

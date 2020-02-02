@@ -18,6 +18,8 @@ export class MovieDetailsComponent implements OnInit {
   budget: string = '';
   revenue: string = '';
   vote: string = '';
+  erroMessage:string = '';
+  hasError: boolean = false;
 
   constructor(private apiService: ApiService) { }
 
@@ -37,9 +39,14 @@ export class MovieDetailsComponent implements OnInit {
 
       this.imgBaseUrl = this.apiService.getImageBaseUrl();
       this.posterUrl = this.imgBaseUrl + 'w154' + this.movieDetails.poster_path;
+    },error=>{
+      this.erroMessage = 'An error occured!Please try again later!';
+      this.hasError = true;
+      console.log(error);
     });
   }
 
+  //i don't display this list...yet!!
   loadSimilarMovies(id: number){
     this.apiService.getSimilarMovies(id).subscribe((response) => {
       this.similarMovies = response;

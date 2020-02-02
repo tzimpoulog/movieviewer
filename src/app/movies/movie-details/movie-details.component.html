@@ -1,5 +1,12 @@
 <div class="container">
-    <div *ngIf="!dataStatus">
+    <div class="row">
+            <div class="col-sm-12">
+                <ngb-alert *ngIf="hasError" [dismissible]="false" >
+                    {{ erroMessage }}
+                  </ngb-alert>
+            </div>
+    </div>
+    <div *ngIf="!dataStatus && !hasError">
         <div class="row mt-5">
             <div class="col-sm-12 text-center text-white">
                 <h3>{{ movieTitle }}</h3>
