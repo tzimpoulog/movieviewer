@@ -1,4 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap' ;
+import { RouterLinkWithHref } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MovieDetailsComponent } from './movie-details.component';
 
@@ -8,7 +12,8 @@ describe('MovieDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MovieDetailsComponent ]
+      declarations: [ MovieDetailsComponent ],
+      imports: [NgbModule,RouterTestingModule.withRoutes([]),HttpClientModule]
     })
     .compileComponents();
   }));
