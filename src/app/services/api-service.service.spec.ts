@@ -17,13 +17,6 @@ describe('ApiServiceService', () => {
     expect(service).toBeTruthy();
   });
 
-  // it('be able to retrieve movies from the API via getList method', () => {
-  //   service.getList('popular').subscribe(movies => {
-  //       expect(movies).length == 20;
-  //       //expect(posts).toEqual(dummyPosts);
-  //   });
-  // });
-
   // it('returned Observable should match the right data', () => {
   //   const mockCourses = [
   //     { popularity: '569.811',
