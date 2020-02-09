@@ -1,5 +1,5 @@
 # Movieviewer
-
+A web app consuming [API The Movie DB](https://developers.themoviedb.org/4/getting-started/authorization).
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
 
 ## Development server
